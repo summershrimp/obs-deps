@@ -124,7 +124,7 @@ config() {
     -DINPUT_pcre=qt
     -DINPUT_doubleconversion=qt
     -DINPUT_libmd4c=qt
-    -DFEATURE_openssl=OFF
+    -DFEATURE_openssl=ON
     -DQT_BUILD_BENCHMARKS=OFF
     -DQT_BUILD_EXAMPLES=OFF
     -DQT_BUILD_EXAMPLES_BY_DEFAULT=OFF
@@ -132,6 +132,7 @@ config() {
     -DQT_BUILD_TESTS=OFF
     -DQT_BUILD_TOOLS_BY_DEFAULT=OFF
     -DQT_CREATE_VERSIONED_HARD_LINK=OFF
+    -DQT_FEATURE_openssl_runtime=ON
   )
 
   log_info "Config qtbase (%F{3}${target}%f)"

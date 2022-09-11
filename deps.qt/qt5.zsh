@@ -131,6 +131,7 @@ qt_config() {
     -no-dbus
     -no-glib
     -system-zlib
+    -openssl-runtime
     -c++std c++17
     -DQT_NO_PDF
     -DQT_NO_PRINTER
