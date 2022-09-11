@@ -21,7 +21,6 @@ local -a qt_components=(
   qtsvg
 )
 local dir='qt5'
-
 ## Build Steps
 setup() {
   if [[ ${shared_libs} -eq 0 && ${CPUTYPE} != "${arch}" ]] {
@@ -55,6 +54,13 @@ setup() {
       popd
     }
   }
+
+  setup_openssl
+}
+
+setup_openssl() {
+  log_info "Setup openssl"
+  brew install openssl@1.1
 }
 
 clean() {
@@ -122,6 +128,9 @@ qt_config() {
     -no-dbus
     -no-glib
     -system-zlib
+    -openssl-runtime
+    OPENSSL_PREFIX=$(brew --prefix openssl@1.1)
+    -no-dtls
     -c++std c++17
     -DQT_NO_PDF
     -DQT_NO_PRINTER
