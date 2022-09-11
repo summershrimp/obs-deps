@@ -27,6 +27,7 @@ local -a qt_components=(
   qtimageformats
   qtmultimedia
   qtsvg
+  qtwebsockets
 )
 local dir='qt5'
 

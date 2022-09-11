@@ -13,6 +13,7 @@ local -a qt_components=(
   'qtshadertools'
   'qtmultimedia'
   'qtsvg'
+  'qtwebsockets'
 )
 
 local dir='qt6'
