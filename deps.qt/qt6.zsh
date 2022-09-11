@@ -17,7 +17,6 @@ local -a qt_components=(
 )
 
 local dir='qt6'
-
 ## Build Steps
 setup() {
   autoload -Uz dep_download log_info log_error
@@ -46,6 +45,14 @@ setup() {
       popd
     }
   }
+  setup_openssl
+}
+
+setup_openssl() {
+  autoload -Uz log_info
+  
+  log_info "Setup openssl"
+  brew install openssl@1.1
 }
 
 clean() {
@@ -125,7 +132,7 @@ config() {
     -DINPUT_pcre=qt
     -DINPUT_doubleconversion=qt
     -DINPUT_libmd4c=qt
-    -DFEATURE_openssl=OFF
+    -DFEATURE_openssl=ON
     -DQT_BUILD_BENCHMARKS=OFF
     -DQT_BUILD_EXAMPLES=OFF
     -DQT_BUILD_EXAMPLES_BY_DEFAULT=OFF
@@ -133,6 +140,9 @@ config() {
     -DQT_BUILD_TESTS=OFF
     -DQT_BUILD_TOOLS_BY_DEFAULT=OFF
     -DQT_CREATE_VERSIONED_HARD_LINK=OFF
+    -DQT_FEATURE_openssl_runtime=ON
+    -DQT_FEATURE_dtls=OFF
+    -DOPENSSL_ROOT_DIR=$(brew --prefix openssl@1.1)
   )
 
   log_info "Config qtbase (%F{3}${target}%f)"
