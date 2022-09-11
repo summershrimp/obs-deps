@@ -96,7 +96,7 @@ function Configure {
         $QtBuildConfiguration = '-release'
     }
 
-    $BuildCommand = "..\..\..\qt5\configure -opensource -confirm-license ${QtBuildConfiguration} -no-strip -nomake examples -nomake tests -no-compile-examples -schannel -no-dbus -no-freetype -no-harfbuzz -no-icu -no-feature-itemmodeltester -no-feature-printdialog -no-feature-printer -no-feature-printpreviewdialog -no-feature-printpreviewwidget -no-feature-sql -no-feature-sqlmodel -no-feature-testlib -no-sql-db2 -no-sql-ibase -no-sql-mysql -no-sql-oci -no-sql-odbc -no-sql-psql -no-sql-sqlite2 -no-sql-sqlite -no-sql-tds -openssl-runtime -DQT_NO_PDF -DQT_NO_PRINTER -mp -prefix ${BuildPath}"
+    $BuildCommand = "..\..\..\qt5\configure -opensource -confirm-license ${QtBuildConfiguration} -no-strip -nomake examples -nomake tests -no-compile-examples -schannel -no-dbus -no-freetype -no-harfbuzz -no-icu -no-feature-itemmodeltester -no-feature-printdialog -no-feature-printer -no-feature-printpreviewdialog -no-feature-printpreviewwidget -no-feature-sql -no-feature-sqlmodel -no-feature-testlib -no-sql-db2 -no-sql-ibase -no-sql-mysql -no-sql-oci -no-sql-odbc -no-sql-psql -no-sql-sqlite2 -no-sql-sqlite -no-sql-tds -ssl -DQT_NO_PDF -DQT_NO_PRINTER -mp -prefix ${BuildPath}"
 
     $Params = @{
         BasePath = (Get-Location | Convert-Path)

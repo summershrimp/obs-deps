@@ -88,7 +88,7 @@ function Configure {
         $QtBuildConfiguration = '-release'
     }
 
-    $BuildCommand = "..\..\..\qt6\configure -opensource -confirm-license ${QtBuildConfiguration} -nomake examples -nomake tests -schannel -no-dbus -no-freetype -no-icu -openssl-runtime -no-feature-androiddeployqt -no-feature-pdf -no-feature-printsupport -no-feature-qmake -no-feature-sql -no-feature-testlib -no-feature-windeployqt -DQT_NO_PDF -prefix ${BuildPath}"
+    $BuildCommand = "..\..\..\qt6\configure -opensource -confirm-license ${QtBuildConfiguration} -nomake examples -nomake tests -schannel -no-dbus -no-freetype -no-icu -ssl -no-feature-androiddeployqt -no-feature-pdf -no-feature-printsupport -no-feature-qmake -no-feature-sql -no-feature-testlib -no-feature-windeployqt -DQT_NO_PDF -prefix ${BuildPath}"
 
     $Params = @{
         BasePath = (Get-Location | Convert-Path)
