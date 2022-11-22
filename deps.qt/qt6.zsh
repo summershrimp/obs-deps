@@ -140,6 +140,7 @@ config() {
     -DQT_BUILD_TOOLS_BY_DEFAULT=OFF
     -DQT_CREATE_VERSIONED_HARD_LINK=OFF
     -DQT_FEATURE_openssl_runtime=ON
+    -DQT_FEATURE_dtls=OFF
     -DOPENSSL_ROOT_DIR=$(brew --prefix openssl@1.1)
   )
 

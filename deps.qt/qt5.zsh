@@ -139,6 +139,7 @@ qt_config() {
     -system-zlib
     -openssl-runtime
     OPENSSL_PREFIX=$(brew --prefix openssl@1.1)
+    -no-dtls
     -c++std c++17
     -DQT_NO_PDF
     -DQT_NO_PRINTER
